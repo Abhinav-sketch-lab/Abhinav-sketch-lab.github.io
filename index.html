@@ -1,62 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Personal Website</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Abhinav Parmar</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #0f172a, #020617);
+    color: white;
+}
+
+/* HERO SECTION */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.left {
+    max-width: 50%;
+}
+
+h1 {
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #ff4ecd;
+}
+
+p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+button {
+    padding: 10px 18px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn1 {
+    background: linear-gradient(45deg, #ff4ecd, #7c3aed);
+    color: white;
+}
+
+.btn2 {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.right img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid #ff4ecd;
+}
+
+/* CARD SECTION */
+.card {
+    background: #111827;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* CONTACT FORM */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button {
+    background: #ff4ecd;
+    color: white;
+    margin-top: 10px;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Abhinav Parmar</h1>
-    <p>Aspiring Developer | Student</p>
-</header>
+<!-- HERO -->
+<div class="container">
+    
+    <div class="left">
+        <h2>Hello, I'm</h2>
+        <h1>Abhinav <span class="highlight">Parmar</span></h1>
+        <h3>Aspiring Developer</h3>
 
-<section>
-    <div class="card">
-        <h2>About Me</h2>
-        <p>I am an enthusiastic first-year engineering student of Sri Sri University with a keen interest in software development. With hands-on experience in Java, web developmentand python, I focus on building meaningful projects and continuously enhancing my technical and analytical skills to prepare for industry challenges..</p>
+        <p>
+            I am a first-year engineering student passionate about coding and web development.
+            I enjoy building projects and learning new technologies.
+        </p>
+
+        <button class="btn1">View Projects</button>
+        <button class="btn2">Contact Me</button>
     </div>
 
-    <div class="card">
-        <h2>Secured internship at InAmigos Foundation (AI Content Writing) via Internshala platform.</h2> 
-        <ul>
-            <li>Achievement 1</li>
-            <li>Achievement 2</li>
-        </ul>
+    <div class="right">
+        <img src="profile.jpg" alt="My Photo">
     </div>
 
-    <div class="card">
-        <h2>Projects</h2>
-        <p>Coming soon...</p>
-    </div>
+</div>
 
-    <div class="card">
-        <h2>Contact</h2>
-        <p>Email: parmarabhinav84@gmail.com</p>
-    </div>
-</section>
+<!-- ACHIEVEMENTS -->
+<div class="card">
+    <h2>Achievements</h2>
+    <p>Secured an internship through Internshala, demonstrating strong initiative and learning ability.</p>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+    <h2>parmarabhinav84@gmail.com</h2>
+
+    <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        
+        <input type="email" name="email" placeholder="Your Email" required>
+        
+        <textarea name="message" placeholder="What do you want to talk about?" rows="5" required></textarea>
+        
+        <button type="submit">Send Message</button>
+    
+    </form>
+</div>
 
 </body>
 </html>
