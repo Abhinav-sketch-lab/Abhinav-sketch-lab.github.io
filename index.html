@@ -132,32 +132,26 @@ form button {
         <img src="IMG_20250420_163606.jpg" alt="My Photo">
     </div>
 
-</div>
-    <div class="card">
-    <h2>Quick Math Game 🎯</h2>
-    <p id="question"></p>
-
-    <button onclick="checkAnswer(true)" id="opt1"></button>
-    <button onclick="checkAnswer(false)" id="opt2"></button>
-</div>
-
 <script>
 let correctAnswer = true;
+let score = 0;
 
 function generateQuestion() {
     let questions = [
-        { q: "sin(90°) = ?", correct: "1", wrong: "0" },
-        { q: "cos(0°) = ?", correct: "1", wrong: "0" },
-        { q: "tan(45°) = ?", correct: "1", wrong: "0" },
-        { q: "sin(0°) = ?", correct: "0", wrong: "1" },
-        { q: "cos(90°) = ?", correct: "0", wrong: "1" }
+        { q: "sin(30°) + cos(60°) = ?", correct: "1", wrong: "0.5" },
+        { q: "tan(45°) + sin(90°) = ?", correct: "2", wrong: "1" },
+        { q: "cos²(30°) = ?", correct: "3/4", wrong: "1/2" },
+        { q: "sin²(45°) = ?", correct: "1/2", wrong: "1" },
+        { q: "sec(60°) = ?", correct: "2", wrong: "1" },
+        { q: "cosec(30°) = ?", correct: "2", wrong: "1" },
+        { q: "sin(60°) = ?", correct: "√3/2", wrong: "1/2" },
+        { q: "cos(45°) = ?", correct: "√2/2", wrong: "1/2" }
     ];
 
     let random = questions[Math.floor(Math.random() * questions.length)];
 
     document.getElementById("question").innerText = random.q;
 
-    // Randomly assign correct answer to button
     if (Math.random() > 0.5) {
         document.getElementById("opt1").innerText = random.correct;
         document.getElementById("opt2").innerText = random.wrong;
@@ -170,19 +164,34 @@ function generateQuestion() {
 }
 
 function checkAnswer(choice) {
+    let popup = document.getElementById("popup");
+    let text = document.getElementById("popupText");
+
     if (choice === correctAnswer) {
-        alert("😊 You are great!");
+        score++;
+
+        if (score >= 5) {
+            text.innerHTML = "🎁 Congratulations! You unlocked a gift!";
+            score = 0; // reset after reward
+        } else {
+            text.innerHTML = "😊 You are great! (" + score + "/5)";
+        }
+
     } else {
-        alert("😢 You need to work hard ❤️");
+        text.innerHTML = "😢 You need to work hard ❤️";
+        score = 0; // reset score on wrong
     }
 
-    generateQuestion(); // next question
+    popup.style.display = "flex";
 }
 
-// Load first question
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    generateQuestion();
+}
+
 generateQuestion();
 </script>
-
 <!-- ACHIEVEMENTS -->
 <div class="card">
     <h2>Achievements</h2>
