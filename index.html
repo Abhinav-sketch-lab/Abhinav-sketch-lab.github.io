@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <title>Abhinav Parmar</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(120deg, #0f172a, #020617);
     color: white;
 }
@@ -58,6 +61,7 @@ button {
     color: white;
 }
 
+/* IMAGE */
 .right img {
     width: 280px;
     height: 280px;
@@ -88,6 +92,21 @@ form button {
     margin-top: 10px;
 }
 
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right img {
+        margin-top: 20px;
+    }
+
+    .left {
+        max-width: 100%;
+    }
+}
 </style>
 </head>
 
@@ -118,7 +137,13 @@ form button {
 <!-- ACHIEVEMENTS -->
 <div class="card">
     <h2>Achievements</h2>
-    <p>Secured internship at InAmigos Foundation (AI Content Writing) via Internshala platform..</p>
+    <p>Secured internship at InAmigos Foundation (AI Content Writing) via Internshala platform.</p>
+</div>
+
+<!-- PROJECTS -->
+<div class="card">
+    <h2>Projects</h2>
+    <p>Personal Portfolio Website (this website)</p>
 </div>
 
 <!-- CONTACT -->
