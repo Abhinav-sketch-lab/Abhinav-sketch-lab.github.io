@@ -120,8 +120,7 @@ form button {
         <h3>Aspiring Developer</h3>
 
         <p>
-            I am a first-year engineering student passionate about coding and web development.
-            I enjoy building projects and learning new technologies.
+            I am an enthusiastic first-year engineering student in Sri Sri University with a keen interest in software development. With hands-on experience in Java and web development, I focus on building meaningful projects and continuously enhancing my technical and analytical skills to prepare for industry challenges.
         </p>
     </div>
 
@@ -133,7 +132,7 @@ form button {
 <!-- ACHIEVEMENTS -->
 <div class="card">
     <h2>Achievements</h2>
-    <p>Secured an internship through Internshala, demonstrating strong initiative and learning ability.</p>
+    <p>Secured internship at InAmigos Foundation (AI Content Writing) via Internshala platform..</p>
 </div>
 
 <!-- PROJECTS -->
@@ -161,7 +160,7 @@ form button {
 
 <!-- CONTACT -->
 <div class="card">
-    <h2>Contact Me</h2>
+    <h2>parmarabhinav84@gmail.com</h2>
 
     <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -205,14 +204,7 @@ function checkAnswer(choice) {
 
     if (choice === correctAnswer) {
         score++;
-
-        if (score >= 5) {
-            message = "🎁 Congratulations! You unlocked the gift 🔥";
-            score = 0;
-        } else {
-            message = "😊 You are great! (" + score + "/5)";
-        }
-
+        message = "😊 You are great! (Score: " + score + ")";
     } else {
         message = "😢 You need to work hard ❤️";
         score = 0;
