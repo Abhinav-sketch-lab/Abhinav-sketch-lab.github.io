@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Abhinav Parmar</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 <style>
@@ -15,12 +14,12 @@ body {
     color: white;
 }
 
-/* HERO SECTION */
+/* HERO */
 .container {
-  display: flex;
-  justify-content: space-around; /* Ya space-between use karein */
-  align-items: stretch;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
 }
 
 .left {
@@ -29,39 +28,12 @@ body {
 
 h1 {
     font-size: 55px;
-    margin: 10px 0;
 }
 
 .highlight {
     color: #ff4ecd;
 }
 
-p {
-    color: #cbd5e1;
-    line-height: 1.6;
-}
-
-button {
-    padding: 10px 18px;
-    margin-top: 10px;
-    margin-right: 10px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn1 {
-    background: linear-gradient(45deg, #ff4ecd, #7c3aed);
-    color: white;
-}
-
-.btn2 {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-}
-
-/* IMAGE */
 .right img {
     width: 280px;
     height: 280px;
@@ -69,7 +41,7 @@ button {
     border: 4px solid #ff4ecd;
 }
 
-/* CARD SECTION */
+/* CARD */
 .card {
     background: #111827;
     margin: 20px;
@@ -77,7 +49,16 @@ button {
     border-radius: 10px;
 }
 
-/* CONTACT FORM */
+/* BUTTONS */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* FORM */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -89,22 +70,41 @@ input, textarea {
 form button {
     background: #ff4ecd;
     color: white;
-    margin-top: 10px;
 }
 
-/* MOBILE RESPONSIVE */
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         text-align: center;
     }
 
-    .right img {
-        margin-top: 20px;
-    }
-
     .left {
         max-width: 100%;
+    }
+
+    .right img {
+        margin-top: 20px;
     }
 }
 </style>
@@ -114,23 +114,62 @@ form button {
 
 <!-- HERO -->
 <div class="container">
-    
     <div class="left">
         <h2>Hello, I'm</h2>
         <h1>Abhinav <span class="highlight">Parmar</span></h1>
         <h3>Aspiring Developer</h3>
 
         <p>
-            I am an enthusiastic first-year engineering student in Sri Sri University with a keen interest in software development. With hands-on experience in Java and web development, I focus on building meaningful projects and continuously enhancing my technical and analytical skills to prepare for industry challenges.
+            I am a first-year engineering student passionate about coding and web development.
+            I enjoy building projects and learning new technologies.
         </p>
-
-        <button class="btn1">View Projects</button>
-        <button class="btn2">Contact Me</button>
     </div>
 
     <div class="right">
-        <img src="IMG_20250420_163606.jpg" alt="My Photo">
+        <img src="profile.jpg" alt="My Photo">
     </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="card">
+    <h2>Achievements</h2>
+    <p>Secured an internship through Internshala, demonstrating strong initiative and learning ability.</p>
+</div>
+
+<!-- PROJECTS -->
+<div class="card">
+    <h2>Projects</h2>
+    <p>Personal Portfolio Website (this website)</p>
+</div>
+
+<!-- GAME -->
+<div class="card">
+    <h2>Challenge Yourself 🎯</h2>
+    <p id="question"></p>
+
+    <button onclick="checkAnswer(true)" id="opt1"></button>
+    <button onclick="checkAnswer(false)" id="opt2"></button>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2 id="popupText"></h2>
+        <button onclick="closePopup()">Next</button>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+    <h2>Contact Me</h2>
+
+    <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="What do you want to talk about?" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
 
 <script>
 let correctAnswer = true;
@@ -138,14 +177,12 @@ let score = 0;
 
 function generateQuestion() {
     let questions = [
-        { q: "sin(30°) + cos(60°) = ?", correct: "1", wrong: "0.5" },
-        { q: "tan(45°) + sin(90°) = ?", correct: "2", wrong: "1" },
-        { q: "cos²(30°) = ?", correct: "3/4", wrong: "1/2" },
-        { q: "sin²(45°) = ?", correct: "1/2", wrong: "1" },
-        { q: "sec(60°) = ?", correct: "2", wrong: "1" },
-        { q: "cosec(30°) = ?", correct: "2", wrong: "1" },
-        { q: "sin(60°) = ?", correct: "√3/2", wrong: "1/2" },
-        { q: "cos(45°) = ?", correct: "√2/2", wrong: "1/2" }
+        { q: "sin(75°) = ?", correct: "(√6 + √2)/4", wrong: "(√6 - √2)/4" },
+        { q: "cos(15°) = ?", correct: "(√6 + √2)/4", wrong: "(√6 - √2)/4" },
+        { q: "tan(75°) = ?", correct: "2 + √3", wrong: "2 - √3" },
+        { q: "sec²(30°) = ?", correct: "4/3", wrong: "3/4" },
+        { q: "cosec²(45°) = ?", correct: "2", wrong: "1" },
+        { q: "sin²(30°) + cos²(30°) = ?", correct: "1", wrong: "1/2" }
     ];
 
     let random = questions[Math.floor(Math.random() * questions.length)];
@@ -164,25 +201,29 @@ function generateQuestion() {
 }
 
 function checkAnswer(choice) {
-    let popup = document.getElementById("popup");
-    let text = document.getElementById("popupText");
+    let message = "";
 
     if (choice === correctAnswer) {
         score++;
 
         if (score >= 5) {
-            text.innerHTML = "🎁 Congratulations! You unlocked a gift!";
-            score = 0; // reset after reward
+            message = "🎁 Congratulations! You unlocked the gift 🔥";
+            score = 0;
         } else {
-            text.innerHTML = "😊 You are great! (" + score + "/5)";
+            message = "😊 You are great! (" + score + "/5)";
         }
 
     } else {
-        text.innerHTML = "😢 You need to work hard ❤️";
-        score = 0; // reset score on wrong
+        message = "😢 You need to work hard ❤️";
+        score = 0;
     }
 
-    popup.style.display = "flex";
+    showPopup(message);
+}
+
+function showPopup(message) {
+    document.getElementById("popupText").innerHTML = message;
+    document.getElementById("popup").style.display = "flex";
 }
 
 function closePopup() {
@@ -190,36 +231,8 @@ function closePopup() {
     generateQuestion();
 }
 
-generateQuestion();
+window.onload = generateQuestion;
 </script>
-<!-- ACHIEVEMENTS -->
-<div class="card">
-    <h2>Achievements</h2>
-    <p>Secured internship at InAmigos Foundation (AI Content Writing) via Internshala platform.</p>
-</div>
-
-<!-- PROJECTS -->
-<div class="card">
-    <h2>Projects</h2>
-    <p>Personal Portfolio Website (this website)</p>
-</div>
-
-<!-- CONTACT -->
-<div class="card">
-    <h2>parmarabhinav84@gmail.com</h2>
-
-    <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
-        
-        <input type="text" name="name" placeholder="Your Name" required>
-        
-        <input type="email" name="email" placeholder="Your Email" required>
-        
-        <textarea name="message" placeholder="What do you want to talk about?" rows="5" required></textarea>
-        
-        <button type="submit">Send Message</button>
-    
-    </form>
-</div>
 
 </body>
 </html>
