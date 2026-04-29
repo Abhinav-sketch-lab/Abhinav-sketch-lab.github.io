@@ -7,6 +7,97 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 <style>
+
+/* BACKGROUND */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #fff7cc, #ffe680);
+    color: black;
+}
+
+/* HERO */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.left {
+    max-width: 50%;
+}
+
+h1 {
+    font-size: 55px;
+}
+
+.highlight {
+    color: #ff4ecd;
+}
+
+.right img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid #ff4ecd;
+}
+
+/* CARD */
+.card {
+    background: #fff3b0;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* BUTTON */
+button {
+    background: #facc15;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FORM */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+form button {
+    background: #ff4ecd;
+    color: white;
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+/* SKILLS */
 .skills-section {
     display: flex;
     gap: 20px;
@@ -47,97 +138,16 @@
     text-align: center;
 }
 
-/* FRONT SIDE */
 .front {
-    background: #f1f5f9;
+    background: #facc15;
     color: black;
-    font-size: 18px;
+    font-weight: bold;
 }
 
-/* BACK SIDE */
 .back {
-    background: #111827;
+    background: #78350f;
     color: white;
     transform: rotateY(180deg);
-    font-size: 14px;
-}
-
-/* HERO */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px;
-}
-
-.left {
-    max-width: 50%;
-}
-
-h1 {
-    font-size: 55px;
-}
-
-.highlight {
-    color: #ff4ecd;
-}
-
-.right img {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    border: 4px solid #ff4ecd;
-}
-
-/* CARD */
-.card {
-    background: #111827;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-/* BUTTONS */
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-}
-
-/* FORM */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: none;
-}
-
-form button {
-    background: #ff4ecd;
-    color: white;
-}
-
-/* POPUP */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background: #111827;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
 }
 
 /* MOBILE */
@@ -155,6 +165,7 @@ form button {
         margin-top: 20px;
     }
 }
+
 </style>
 </head>
 
@@ -168,32 +179,31 @@ form button {
         <h3>Aspiring Developer</h3>
 
         <p>
-            I am an enthusiastic first-year engineering student in Sri Sri University with a keen interest in software development. With hands-on experience in Java and web development, I focus on building meaningful projects and continuously enhancing my technical and analytical skills to prepare for industry challenges.
+            I am an enthusiastic first-year engineering student of Sri Sri University passionate about software development, building projects, and improving problem-solving skills.
         </p>
     </div>
 
     <div class="right">
-        <img src="IMG_20250420_163606.jpg" alt="My Photo">
+        <img src="IMG_20250420_163606.jpg">
     </div>
 </div>
 
 <!-- ACHIEVEMENTS -->
 <div class="card">
     <h2>Achievements</h2>
-    <p>Secured internship at InAmigos Foundation (AI Content Writing) via Internshala platform..</p>
+    <p>Secured internship at InAmigos Foundation via Internshala.</p>
 </div>
 
 <!-- PROJECTS -->
 <div class="card">
     <h2>Projects</h2>
-    <p>Personal Portfolio Website (this website)</p>
+    <p>Personal Portfolio Website</p>
 </div>
 
 <!-- GAME -->
 <div class="card">
     <h2>Challenge Yourself 🎯</h2>
     <p id="question"></p>
-
     <button onclick="checkAnswer(true)" id="opt1"></button>
     <button onclick="checkAnswer(false)" id="opt2"></button>
 </div>
@@ -206,74 +216,52 @@ form button {
     </div>
 </div>
 
-    
-   <div class="skills-section">
+<!-- SKILLS -->
+<div class="skills-section">
 
-    <!-- JAVA -->
-    <div class="skill-card" onclick="this.classList.toggle('flip')">
-        <div class="inner">
-            <div class="front">
-                <h3>Java</h3>
-            </div>
-            <div class="back">
-                Java is a high-level, object-oriented programming language used for building applications, websites, and Android apps.
-            </div>
-        </div>
-    </div>
-
-    <!-- PYTHON -->
-    <div class="skill-card" onclick="this.classList.toggle('flip')">
-        <div class="inner">
-            <div class="front">
-                <h3>Python</h3>
-            </div>
-            <div class="back">
-                Python is a simple and powerful programming language used for automation, data science, and web development.
-            </div>
-        </div>
-    </div>
-
-    <!-- HTML -->
-    <div class="skill-card" onclick="this.classList.toggle('flip')">
-        <div class="inner">
-            <div class="front">
-                <h3>HTML</h3>
-            </div>
-            <div class="back">
-                HTML is the standard markup language used to create and structure content on websites.
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT -->
-    <div class="skill-card" onclick="this.classList.toggle('flip')">
-        <div class="inner">
-            <div class="front">
-                <h3>JavaScript (Basic)</h3>
-            </div>
-            <div class="back">
-                JavaScript is used to make websites interactive, like buttons, forms, animations, and dynamic content.
-            </div>
-        </div>
-    </div>
-
+<div class="skill-card" onclick="this.classList.toggle('flip')">
+<div class="inner">
+<div class="front"><h3>Java</h3></div>
+<div class="back">Java is an object-oriented programming language used for apps, websites, and Android.</div>
 </div>
 </div>
-    <div class="card">
+
+<div class="skill-card" onclick="this.classList.toggle('flip')">
+<div class="inner">
+<div class="front"><h3>Python</h3></div>
+<div class="back">Python is a simple and powerful language used in automation, AI, and data science.</div>
+</div>
+</div>
+
+<div class="skill-card" onclick="this.classList.toggle('flip')">
+<div class="inner">
+<div class="front"><h3>HTML</h3></div>
+<div class="back">HTML is used to structure and design web pages.</div>
+</div>
+</div>
+
+<div class="skill-card" onclick="this.classList.toggle('flip')">
+<div class="inner">
+<div class="front"><h3>JavaScript (Basic)</h3></div>
+<div class="back">JavaScript adds interactivity to websites like buttons and animations.</div>
+</div>
+</div>
+
+</div>
+
+<!-- LINKEDIN -->
+<div class="card">
     <h2>Connect with Me</h2>
-    <p>
-        LinkedIn: 
-        <a href="https://www.linkedin.com/in/abhinav-parmar-4a0919380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="color:#ff4ecd;">
-            Visit My Profile
-        </a>
-    </p>
+    <a href="https://www.linkedin.com/in/abhinav-parmar-4a0919380" target="_blank">
+        Visit My LinkedIn
+    </a>
 </div>
-    
+
 <!-- CONTACT -->
 <div class="card">
     <h2>parmarabhinav84@gmail.com</h2>
 
-    <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+    <form action="https://formsubmit.co/parmarabhinav84@gmail.com" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="What do you want to talk about?" rows="5" required></textarea>
@@ -282,6 +270,7 @@ form button {
 </div>
 
 <script>
+
 let correctAnswer = true;
 let score = 0;
 
@@ -289,10 +278,7 @@ function generateQuestion() {
     let questions = [
         { q: "sin(75°) = ?", correct: "(√6 + √2)/4", wrong: "(√6 - √2)/4" },
         { q: "cos(15°) = ?", correct: "(√6 + √2)/4", wrong: "(√6 - √2)/4" },
-        { q: "tan(75°) = ?", correct: "2 + √3", wrong: "2 - √3" },
-        { q: "sec²(30°) = ?", correct: "4/3", wrong: "3/4" },
-        { q: "cosec²(45°) = ?", correct: "2", wrong: "1" },
-        { q: "sin²(30°) + cos²(30°) = ?", correct: "1", wrong: "1/2" }
+        { q: "tan(75°) = ?", correct: "2 + √3", wrong: "2 - √3" }
     ];
 
     let random = questions[Math.floor(Math.random() * questions.length)];
@@ -317,15 +303,11 @@ function checkAnswer(choice) {
         score++;
         message = "😊 You are great! (Score: " + score + ")";
     } else {
-        message = "😢 You need to work hard ❤️";
+        message = "😢 Try again ❤️";
         score = 0;
     }
 
-    showPopup(message);
-}
-
-function showPopup(message) {
-    document.getElementById("popupText").innerHTML = message;
+    document.getElementById("popupText").innerText = message;
     document.getElementById("popup").style.display = "flex";
 }
 
@@ -335,6 +317,7 @@ function closePopup() {
 }
 
 window.onload = generateQuestion;
+
 </script>
 
 </body>
